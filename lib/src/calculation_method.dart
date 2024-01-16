@@ -52,6 +52,42 @@ enum CalculationMethod {
   /// Calculates Maghrib based on the sun reaching an angle of 4.5° below the horizon.
   tehran,
 
+  /// Qum
+  /// Shia Ithna-Ashari, Leva Institute, Qum. Fajr Angle: 16. Maghrib Angle: 4. Isha Angle: 14
+  qum,
+
+  /// Gulf
+  /// Gulf Region. Fajr Angle: 19.5. Isha Angle: 90 min.
+  gulf,
+
+  /// France
+  /// Union Organization Islamic de France. Fajr Angle: 12. Isha Angle: 12.
+  france,
+
+  /// Russia
+  /// Spiritual Administration of Muslims of Russia. Fajr Angle: 16. Isha Angle: 15.
+  russia,
+
+  /// Jakim
+  /// Jabatan Kemajuan Islam Malaysia (JAKIM)
+  jakim,
+
+  /// Tunisia
+  /// Tunisia. Fajr Angle: 18. Isha Angle: 18.
+  tunisia,
+
+  /// Algeria
+  /// Algeria. Fajr Angle: 18. Isha Angle: 17.
+  algeria,
+
+  /// Kement
+  /// Kementerian Agama Republik Indonesia. Fajr Angle: 20. Isha Angle: 18.
+  kement,
+
+  /// Morocco
+  /// Morocco. Fajr Angle: 19. Isha Angle: 17.
+  morocco,
+
   /// The default value for [CalculationParameters.method] when initializing a
   /// [CalculationParameters] object. Sets a Fajr angle of 0 and an Isha angle of 0.
   other
@@ -142,6 +178,55 @@ extension CalculationMethodExtensions on CalculationMethod {
             method: this,
           );
         }
+      case CalculationMethod.qum:
+        {
+          return CalculationParameters(
+              fajrAngle: 16.0,
+              ishaAngle: 14.0,
+              maghribAngle: 4.0,
+              method: this);
+        }
+      case CalculationMethod.gulf:
+        {
+          return CalculationParameters(
+              fajrAngle: 19.5, ishaInterval: 90, method: this);
+        }
+      case CalculationMethod.france:
+        {
+          return CalculationParameters(
+              fajrAngle: 12.0, ishaAngle: 12.0, method: this);
+        }
+      case CalculationMethod.russia:
+        {
+          return CalculationParameters(
+              fajrAngle: 16.0, ishaAngle: 15.0, method: this);
+        }
+      case CalculationMethod.jakim:
+        {
+          return CalculationParameters(
+              fajrAngle: 20.0, ishaAngle: 18.0, method: this);
+        }
+      case CalculationMethod.tunisia:
+        {
+          return CalculationParameters(
+              fajrAngle: 18.0, ishaAngle: 18.0, method: this);
+        }
+      case CalculationMethod.algeria:
+        {
+          return CalculationParameters(
+              fajrAngle: 18.0, ishaAngle: 17.0, method: this);
+        }
+      case CalculationMethod.kement:
+        {
+          return CalculationParameters(
+              fajrAngle: 20.0, ishaAngle: 18.0, method: this);
+        }
+      case CalculationMethod.morocco:
+        {
+          return CalculationParameters(
+              fajrAngle: 19.0, ishaAngle: 17.0, method: this);
+        }
+
       case CalculationMethod.other:
         {
           return CalculationParameters(
