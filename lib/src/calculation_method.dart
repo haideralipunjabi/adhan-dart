@@ -88,6 +88,14 @@ enum CalculationMethod {
   /// Morocco. Fajr Angle: 19. Isha Angle: 17.
   morocco,
 
+  /// Wifaqul Ulama
+  /// Wifaqul Ulama UK. Fajr Angle: 18. Isha Angle: 18.
+  wifaqululama,
+
+  /// Wifaqul Ulama (High Altitude)
+  /// Wifaqul Ulama UK. Fajr Angle: 18. Isha Angle: 15.
+  wifaqululama_ha,
+
   /// The default value for [CalculationParameters.method] when initializing a
   /// [CalculationParameters] object. Sets a Fajr angle of 0 and an Isha angle of 0.
   other
@@ -226,7 +234,24 @@ extension CalculationMethodExtensions on CalculationMethod {
           return CalculationParameters(
               fajrAngle: 19.0, ishaAngle: 17.0, method: this);
         }
-
+      case CalculationMethod.wifaqululama:
+        {
+          return CalculationParameters(
+                  fajrAngle: 18.0, ishaAngle: 18.0, method: this)
+              .withMethodAdjustments(PrayerAdjustments(
+                dhuhr: 4,
+                maghrib: 5
+              ));
+        }
+      case CalculationMethod.wifaqululama_ha:
+        {
+          return CalculationParameters(
+                  fajrAngle: 15.0, ishaAngle: 18.0, method: this)
+              .withMethodAdjustments(PrayerAdjustments(
+                dhuhr: 4,
+                maghrib: 5
+              ));
+        }
       case CalculationMethod.other:
         {
           return CalculationParameters(
