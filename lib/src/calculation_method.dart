@@ -7,6 +7,10 @@ enum CalculationMethod {
   /// Uses Fajr angle of 18 and an Isha angle of 17
   muslim_world_league,
 
+  /// Qum
+  /// Shia Ithna-Ashari, Leva Institute, Qum. Fajr Angle: 16. Maghrib Angle: 4. Isha Angle: 14
+  qum,
+
   /// Egyptian General Authority of Survey
   /// Uses Fajr angle of 19.5 and an Isha angle of 17.5
   egyptian,
@@ -51,10 +55,6 @@ enum CalculationMethod {
   /// Institute of Geophysics, University of Tehran. Early Isha time with an angle of 14°. Slightly later Fajr time with an angle of 17.7°.
   /// Calculates Maghrib based on the sun reaching an angle of 4.5° below the horizon.
   tehran,
-
-  /// Qum
-  /// Shia Ithna-Ashari, Leva Institute, Qum. Fajr Angle: 16. Maghrib Angle: 4. Isha Angle: 14
-  qum,
 
   /// Gulf
   /// Gulf Region. Fajr Angle: 19.5. Isha Angle: 90 min.
